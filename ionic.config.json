@@ -1,0 +1,7 @@
+{
+  "name": "sismosecure-mobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
