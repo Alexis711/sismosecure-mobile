@@ -1,0 +1,80 @@
+ion-content {
+    --background: linear-gradient(45deg, var(--secondary-color) 0%, var(--light-color) 100%);
+    overflow-x: auto;
+    height: 100vh;
+}
+
+ion-col {
+    display: flex;
+    justify-content: center;
+
+}
+
+ion-img {
+    width: 5rem;
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+}
+
+ion-card {
+    width: 100%;
+    min-height: 70vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 15px;
+    padding: 0.5rem;
+
+    ion-card-content {
+        height: 100%;
+    }
+}
+
+ion-label {
+    color: black;
+    text-align: left;
+}
+
+ion-input {
+    background: var(--input-color);
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    border-radius: 10px;
+}
+
+.row-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    max-height: 100vh;
+    padding: 0.5rem;
+}
+
+.label-page{
+    color: var(--dark-color);
+    font-weight: 700;
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+}
+
+.col-label-card {
+    justify-content: left;
+}
+
+.row-button {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+
+.btn-iniciar {
+    margin-top: 50%;
+    width: 100%;
+    --color: white;
+    --background: var(--primary-color);
+    --border-radius: 10px;
+    text-transform: capitalize;
+}
