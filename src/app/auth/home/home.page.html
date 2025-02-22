@@ -1,7 +1,49 @@
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">home</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-row>
+    <ion-col size="12">
+      <ion-searchbar placeholder="Buscar salon"/>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12">
+      <div *ngIf="isLoadingSalones; else listSalones">
+        <ion-row>
+          <ion-col size="12">
+            <ion-spinner name="circular"/>
+          </ion-col>
+        </ion-row>
+      </div>
+      <ng-template #listSalones>
+        <ion-list>
+          <ion-card>
+            <ion-card-header
+              (click)="onCollapseOpciones('')">
+              <ion-row>
+                <ion-card-title>Salon 10</ion-card-title>
+              </ion-row>
+              <ion-row>
+                <ion-card-subtitle>Edificio 1</ion-card-subtitle>
+              </ion-row>
+            </ion-card-header>
+            <ion-card-content
+              id="desplegarOpciones"
+              class="collapsed">
+              <ion-row>
+                <ion-col size="6">
+                  <ion-button>
+                    Entrada
+                  </ion-button>
+                </ion-col>
+                <ion-col size="12">
+                  <ion-button>
+                    Salida
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </ion-list>
+      </ng-template>
+    </ion-col>
+  </ion-row>
 </ion-content>
