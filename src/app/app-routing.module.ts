@@ -9,11 +9,15 @@ const routes: Routes = [
   },
   {
     path: 'splash',
-    loadChildren: () => import('./splash/splash.module').then( m => m.SplashPageModule ),
+    loadChildren: () => import('./splash/splash.module').then(m => m.SplashPageModule),
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule ),
+    loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule),
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthPageModule),
   }
 ];
 
