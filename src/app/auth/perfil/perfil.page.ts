@@ -37,10 +37,10 @@ export class PerfilPage implements OnInit {
       const usuario = JSON.parse(dataUsuario);
       this.usuarios = usuario[0];
       this.formUsuario = this.formBuilder.group({
-        Nombres: [usuario[0].Nombres, [Validators.required]],
-        Apellidos: [usuario[0].Apellidos, [Validators.required]],
-        Correo: [usuario[0].Correo, [Validators.required]],
-        Clave: [usuario[0].Clave, [Validators.required]],
+        Nombres: [{ value:usuario[0].Nombres, disabled: true}, [Validators.required]],
+        Apellidos: [{ value:usuario[0].Apellidos, disabled: true}, [Validators.required]],
+        Correo: [{ value:usuario[0].Correo, disabled: true}, [Validators.required]],
+        Clave: [{ value:usuario[0].Clave, disabled: true}, [Validators.required]],
       });
     }
   }

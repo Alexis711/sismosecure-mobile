@@ -14,25 +14,40 @@
     </ion-row>
     <ion-row class="row-input">
       <ion-col size="12">
-        <ion-input formControlName="Nombres" type="text" class="text-lg" value="Nombres"/>
+        <ion-input 
+        formControlName="Nombres" 
+        type="text" 
+        class="text-lg" 
+        value="Nombres"
+        [disabled]="true"/>
       </ion-col>
       <ion-col size="12">
-        <ion-input formControlName="Apellidos" type="text" class="text-lg" value="Apellidos"/>
+        <ion-input 
+        formControlName="Apellidos" 
+        type="text" 
+        class="text-lg" 
+        value="Apellidos" 
+        [disabled]="true"/>
       </ion-col>
       <ion-col size="12">
-        <ion-input formControlName="Correo" type="email" class="text-lg" value="Example@gmail.com"/>
+        <ion-input 
+        formControlName="Correo" 
+        type="email" 
+        class="text-lg" 
+        value="Example@gmail.com" 
+        [disabled]="true"/>
       </ion-col>
       <ion-col size="12">
-        <ion-input formControlName="Clave" type="password" class="text-lg" value="Contrasena"/>
+        <ion-input 
+        formControlName="Clave" 
+        type="password" 
+        class="text-lg" value="C
+        ontrasena" 
+        [disabled]="true"/>
       </ion-col>
     </ion-row>
   </form>
   <ion-row class="row-button">
-    <ion-col size="12">
-      <ion-button class="text-md">
-        Guardar cambios
-      </ion-button>
-    </ion-col>
     <ion-col size="12">
       <ion-button class="text-md btn-cancelar" (click)="onCancelar()">
         Cancelar

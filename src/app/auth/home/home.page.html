@@ -1,11 +1,6 @@
 <ion-content [fullscreen]="true">
   <ion-row>
     <ion-col size="12">
-      <ion-searchbar placeholder="Buscar salon"/>
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col size="12">
       <div *ngIf="isLoadingSalones; else listSalones">
         <ion-row>
           <ion-col size="12">
@@ -33,8 +28,8 @@
               class="collapsed">
               <ion-row>
                 <ion-col size="12">
-                  <ion-button class="text-md">
-                    Entrada
+                  <ion-button class="text-md" (click)="onRegistrarAsistencia(sal.SalonID)">
+                    Registrarme
                   </ion-button>
                 </ion-col>
               </ion-row>
