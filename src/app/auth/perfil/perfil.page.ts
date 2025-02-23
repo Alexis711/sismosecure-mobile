@@ -29,7 +29,6 @@ export class PerfilPage implements OnInit {
 
   ngOnInit() {
     this.onObtenerUsuario();
-    console.log(this.usuarios)
   }
 
   onObtenerUsuario() {
