@@ -1,0 +1,59 @@
+ion-content {
+    --background: var(--background-color);
+    overflow-x: auto;
+}
+
+ion-row {
+    width: 100%;
+    justify-content: center;
+}
+
+ion-list {
+    background: transparent;
+}
+
+ion-card {
+    border-radius: 15px;
+}
+
+ion-card-header {
+    background: var(--tertiary-color);
+    
+    ion-card-title {
+        font-weight: 600;
+        color: white;
+        text-transform: uppercase;
+    }
+
+    ion-card-subtitle {
+        color: white;
+        text-transform: capitalize;
+    }
+}
+
+ion-card-content {
+    background: var(--input-color);
+    padding: 1rem;
+}
+
+ion-label {
+    color: var(--dark-color);
+}
+
+.col-subtitle {
+    text-align: right;
+    align-self: center;
+}
+
+.label-estatus {
+    background: var(--success-color);
+    color: white;
+    border-radius: 15px;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+.col-hora {
+    text-align: right;
+}

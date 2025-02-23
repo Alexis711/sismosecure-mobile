@@ -1,13 +1,59 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>ubicacion</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">ubicacion</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-row>
+    <ion-col size="12">
+      <div *ngIf="isLoadingSalones; else listSalones">
+        <ion-row>
+          <ion-col size="12">
+            <ion-spinner name="circular"/>
+          </ion-col>
+        </ion-row>
+      </div>
+      <ng-template #listSalones>
+        <ion-list>
+          <ion-card>
+            <ion-card-header>
+                <ion-row>
+                  <ion-col size="8">
+                    <ion-card-title class="text-lg">
+                      Salon 11
+                    </ion-card-title>
+                  </ion-col>
+                  <ion-col class="col-subtitle" size="4">
+                    <ion-card-subtitle class="text-md">
+                      Edificio 1
+                    </ion-card-subtitle>
+                  </ion-col>
+                </ion-row>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-row>
+                <ion-col size="6">
+                  <ion-label class="text-md">
+                    22/Feb/2024
+                  </ion-label>
+                </ion-col>
+                <ion-col class="col-hora" size="3">
+                  <ion-label class="text-md">
+                    08:00 am
+                  </ion-label>
+                </ion-col>
+                <ion-col class="col-hora" size="3">
+                  <div *ngIf="isHoraSalida; else labelSalida">
+                    <ion-label class="text-md label-estatus">
+                      Activo
+                    </ion-label>
+                  </div>
+                  <ng-template #labelSalida>
+                    <ion-label class="text-md">
+                      09:00 am
+                    </ion-label>
+                  </ng-template>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </ion-list>
+      </ng-template>
+    </ion-col>
+  </ion-row>
 </ion-content>

@@ -7,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   standalone: false,
 })
 export class UbicacionPage implements OnInit {
-
+  isLoadingSalones: boolean = false;
+  isHoraSalida: boolean = true;
+  
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }
