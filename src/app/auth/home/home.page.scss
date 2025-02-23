@@ -8,6 +8,10 @@ ion-row {
     justify-content: center;
 }
 
+ion-col {
+    align-self: center;
+}
+
 ion-button {
     width: 100%;
     --color: white;
@@ -28,6 +32,8 @@ ion-searchbar {
 
 ion-card {
     border-radius: 15px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 ion-card-header {
@@ -49,8 +55,17 @@ ion-card-content {
     padding: 1rem;
 }
 
+ion-label {
+    font-weight: 700;
+    color: white;
+}
+
 .btn-salida {
     --background: var(--danger-color);
+}
+
+.col-cantidad {
+    text-align: right;
 }
 
 .collapsed {
