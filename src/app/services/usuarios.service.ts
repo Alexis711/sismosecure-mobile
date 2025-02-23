@@ -16,10 +16,6 @@ export class UsuariosService {
   ) { }
 
   postLogin(body: any) {
-    return this.http.post(environment.URL_BASE+'inicio/mobile', body, { headers: this.headers });
-  }
-  
-  getUsuarioId(UsuarioID: any) {
-
+    return this.http.post(environment.URL_BASE+'Mobile/Login', body, { headers: this.headers });
   }
 }

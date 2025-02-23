@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
 import { UbicacionPageRoutingModule } from './ubicacion-routing.module';
 import { UbicacionPage } from './ubicacion.page';
 
@@ -9,10 +8,10 @@ import { UbicacionPage } from './ubicacion.page';
   imports: [
     CommonModule,
     FormsModule,
-    IonicModule,
+    UbicacionPage,
     UbicacionPageRoutingModule
   ],
-  declarations: [UbicacionPage]
+  declarations: []
 })
 
 export class UbicacionPageModule {}
