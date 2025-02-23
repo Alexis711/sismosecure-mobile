@@ -6,25 +6,27 @@
       </ion-avatar>
     </ion-col>
   </ion-row>
-  <ion-row>
-    <ion-col size="12">
-      <ion-label class="text-sm">&#64;username</ion-label>
-    </ion-col>
-  </ion-row>
-  <ion-row class="row-input">
-    <ion-col size="12">
-      <ion-input type="text" class="text-lg" value="Nombres"/>
-    </ion-col>
-    <ion-col size="12">
-      <ion-input type="text" class="text-lg" value="Apellidos"/>
-    </ion-col>
-    <ion-col size="12">
-      <ion-input type="email" class="text-lg" value="Example@gmail.com"/>
-    </ion-col>
-    <ion-col size="12">
-      <ion-input type="password" class="text-lg" value="Contrasena"/>
-    </ion-col>
-  </ion-row>
+  <form *ngIf="formUsuario" [formGroup]="formUsuario">
+    <ion-row>
+      <ion-col size="12">
+        <ion-label class="text-sm">{{ usuarios.Correo }}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="row-input">
+      <ion-col size="12">
+        <ion-input formControlName="Nombres" type="text" class="text-lg" value="Nombres"/>
+      </ion-col>
+      <ion-col size="12">
+        <ion-input formControlName="Apellidos" type="text" class="text-lg" value="Apellidos"/>
+      </ion-col>
+      <ion-col size="12">
+        <ion-input formControlName="Correo" type="email" class="text-lg" value="Example@gmail.com"/>
+      </ion-col>
+      <ion-col size="12">
+        <ion-input formControlName="Clave" type="password" class="text-lg" value="Contrasena"/>
+      </ion-col>
+    </ion-row>
+  </form>
   <ion-row class="row-button">
     <ion-col size="12">
       <ion-button class="text-md">
@@ -32,7 +34,7 @@
       </ion-button>
     </ion-col>
     <ion-col size="12">
-      <ion-button class="text-md btn-cancelar">
+      <ion-button class="text-md btn-cancelar" (click)="onCancelar()">
         Cancelar
       </ion-button>
     </ion-col>
