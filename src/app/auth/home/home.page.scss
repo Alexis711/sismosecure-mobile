@@ -9,8 +9,9 @@ ion-row {
 
 ion-button {
     width: 100%;
-    color: white;
-    border-radius: 15px;
+    --color: white;
+    --border-radius: 10px;
+    --background: var(--success-color);
     text-transform: capitalize;
 }
 
@@ -45,10 +46,6 @@ ion-card-header {
 ion-card-content {
     background: var(--input-color);
     padding: 1rem;
-}
-
-.btn-entrada {
-    --background: var(--success-color);
 }
 
 .btn-salida {
