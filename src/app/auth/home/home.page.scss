@@ -1,3 +1,60 @@
+ion-content {
+    --background: var(--background-color);
+}
+
+ion-row {
+    width: 100%;
+    justify-content: center;
+}
+
+ion-button {
+    width: 100%;
+    color: white;
+    border-radius: 15px;
+    text-transform: capitalize;
+}
+
+ion-list {
+    background: transparent;
+}
+
+ion-searchbar {
+    padding-top: 1rem;
+    --background: var(--input-color);
+    --border-radius: 10px;
+}
+
+ion-card {
+    border-radius: 15px;
+}
+
+ion-card-header {
+    background: var(--primary-color);
+    
+    ion-card-title {
+        font-weight: 600;
+        color: white;
+    }
+
+    ion-card-subtitle {
+        padding-top: 5px;
+        color: white;
+    }
+}
+
+ion-card-content {
+    background: var(--input-color);
+    padding: 1rem;
+}
+
+.btn-entrada {
+    --background: var(--success-color);
+}
+
+.btn-salida {
+    --background: var(--danger-color);
+}
+
 .collapsed {
     display: none;
 }
