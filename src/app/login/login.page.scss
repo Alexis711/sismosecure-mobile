@@ -1,5 +1,5 @@
 ion-content {
-    --background: linear-gradient(45deg, var(--secondary-color) 0%, var(--light-color) 100%);
+    --background: linear-gradient(45deg, var(--tertiary-color) 0%, var(--secondary-color) 100%);
     overflow-x: auto;
     height: 100vh;
 }
@@ -32,7 +32,7 @@ ion-card {
 }
 
 ion-label {
-    color: black;
+    color: var(--dark-color);
     text-align: left;
 }
 

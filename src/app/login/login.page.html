@@ -15,27 +15,29 @@
               </ion-label>
             </ion-col>
           </ion-row>
-          <ion-row>
-            <ion-col class="col-label-card" size="12">
-              <ion-label for="correo" class="text-md">
-                Ingresa tu usuario o correo:
-              </ion-label>
-            </ion-col>
-            <ion-col size="12">
-              <ion-input id="correo" type="email" placeholder="Example@mail.com" />
-            </ion-col>
-            <ion-col class="col-label-card" size="12">
-              <ion-label for="clave" class="text-md">
-                Ingresa tu contraseña:
-              </ion-label>
-            </ion-col>
-            <ion-col size="12">
-              <ion-input id="clave" type="password" placeholder="********" />
-            </ion-col>
-          </ion-row>
+          <form *ngIf="formLogin" [formGroup]="formLogin" (ngSubmit)="onIniciarSesion()">
+            <ion-row>
+              <ion-col class="col-label-card" size="12">
+                <ion-label for="correo" class="text-md">
+                  Ingresa tu usuario o correo:
+                </ion-label>
+              </ion-col>
+              <ion-col size="12">
+                <ion-input id="correo" formControlName="Correo" class="text-md" type="email" placeholder="Example@mail.com" />
+              </ion-col>
+              <ion-col class="col-label-card" size="12">
+                <ion-label for="clave" class="text-md">
+                  Ingresa tu contraseña:
+                </ion-label>
+              </ion-col>
+              <ion-col size="12">
+                <ion-input id="clave" formControlName="Clave" class="text-md" type="password" placeholder="********" />
+              </ion-col>
+            </ion-row>
+          </form>
           <ion-row class="row-button">
             <ion-col size="12">
-              <ion-button class="text-md btn-iniciar">
+              <ion-button class="text-md btn-iniciar" (click)="onIniciarSesion()">
                 Iniciar sesión
               </ion-button>
             </ion-col>
