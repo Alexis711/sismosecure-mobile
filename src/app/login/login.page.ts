@@ -4,7 +4,7 @@ import { UsuariosService } from '../services/usuarios.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -24,7 +24,8 @@ export class LoginPage implements OnInit {
   constructor(
     private usuariosServ: UsuariosService,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private toastController: ToastController
   ) { }
 
   ngOnInit() {
@@ -42,8 +43,20 @@ export class LoginPage implements OnInit {
             this.router.navigate(['auth']);
             console.log(respuesta.Data)
             localStorage.setItem('Usuario', JSON.stringify(respuesta.Data));
+          } else {
+            this.mostrarToast()
           }
         });
     }
+  }
+
+  async mostrarToast() {
+    const toast = await this.toastController.create({
+      message: 'Verifique su correo o contraseña',
+      duration: 2000,
+      position: 'bottom',
+      color: 'secondary',
+    });
+    await toast.present();
   }
 }

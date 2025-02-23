@@ -17,8 +17,4 @@ export class SalonesService {
   getSalones() {
     return this.http.get(environment.URL_BASE+'Mobile/Salones/Todos', { headers: this.headers });
   }
-
-  getSalonesNombre() {
-    
-  }
 }

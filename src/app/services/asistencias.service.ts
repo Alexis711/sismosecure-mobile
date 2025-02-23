@@ -20,6 +20,6 @@ export class AsistenciasService {
   }
 
   postAsistencia(body: any) {
-
+    return this.http.post(environment.URL_BASE+'Mobile/Asistencia/Registro', body, { headers: this.headers });
   }
 }

@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { Asistencias } from 'src/app/models/asistencias.model';
 import { AsistenciasService } from 'src/app/services/asistencias.service';
@@ -18,11 +19,12 @@ import { AsistenciasService } from 'src/app/services/asistencias.service';
 })
 
 export class UbicacionPage implements OnInit {
-  isLoadingSalones: boolean = false;
+  isLoadingAsistencias: boolean = true;
   asistencias!: Asistencias[];
 
   constructor(
     private asistenciasServ: AsistenciasService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -36,11 +38,17 @@ export class UbicacionPage implements OnInit {
       this.asistenciasServ.getAsistenciasUsuarioID(usuario[0].UsuarioID)
         .subscribe((respuesta: any) => {
           if (respuesta.Estatus) {
-            this.asistencias = respuesta.Data
-            console.log(this.asistencias)
+            this.asistencias = respuesta.Data;
+            this.isLoadingAsistencias = false;
           }
         });
     }
   }
 
+  onRefresh(event: any) {
+    setTimeout(() => {
+      event.target.complete();
+      this.router.navigate(['auth/ubicacion']);
+    }, 2000);
+  }
 }

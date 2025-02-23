@@ -1,7 +1,10 @@
 <ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="onRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <ion-row>
     <ion-col size="12">
-      <div *ngIf="isLoadingSalones; else listSalones">
+      <div *ngIf="isLoadingAsistencias; else listSalones">
         <ion-row>
           <ion-col size="12">
             <ion-spinner name="circular"/>

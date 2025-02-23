@@ -1,8 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { IonicModule, ToastController } from '@ionic/angular';
 import { Salones } from 'src/app/models/salones.model';
+import { AsistenciasService } from 'src/app/services/asistencias.service';
 import { SalonesService } from 'src/app/services/salones.service';
 
 @Component({
@@ -17,13 +19,16 @@ import { SalonesService } from 'src/app/services/salones.service';
   ]
 })
 export class HomePage implements OnInit {
-  isLoadingSalones: boolean = false;
+  isLoadingSalones: boolean = true;
   salones!: Salones[];
 
   constructor(
     private element: ElementRef,
     private renderer: Renderer2,
-    private salonesServ: SalonesService
+    private salonesServ: SalonesService,
+    private asistenciasServ: AsistenciasService,
+    private toastController: ToastController,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -46,9 +51,43 @@ export class HomePage implements OnInit {
       .subscribe((respuesta: any) => {
         if (respuesta.Estatus) {
           this.salones = respuesta.Data;
-          console.log(this.salones)
+          this.isLoadingSalones = false;
         }
       });
   }
 
+  onRegistrarAsistencia(SalonID: any) {
+    const dataUsuario = localStorage.getItem('Usuario');
+    if(dataUsuario) {
+      const usuario = JSON.parse(dataUsuario);
+      const dataBody = {
+        UsuarioID: usuario[0].UsuarioID,
+        SalonID: SalonID,
+      }
+      this.asistenciasServ.postAsistencia(dataBody)
+        .subscribe((respuesta: any) => {
+          if (respuesta.Estatus) {
+            this.mostrarToast();
+            this.onObtenerSalones();
+          }
+        });
+    }
+  }
+
+  async mostrarToast() {
+    const toast = await this.toastController.create({
+      message: 'Asistencia Registrada',
+      duration: 2000,
+      position: 'bottom',
+      color: 'secondary',
+    });
+    await toast.present();
+  }
+
+  onRefresh(event: any) {
+    setTimeout(() => {
+      event.target.complete();
+      this.router.navigate(['auth/inicio']);
+    }, 2000);
+  }
 }
