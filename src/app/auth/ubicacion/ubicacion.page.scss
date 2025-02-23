@@ -40,6 +40,12 @@ ion-label {
     color: var(--dark-color);
 }
 
+ion-spinner {
+    --color: var(--tertiary-color);
+    width: 100%;
+    margin: 1rem;
+} 
+
 .col-subtitle {
     text-align: right;
     align-self: center;

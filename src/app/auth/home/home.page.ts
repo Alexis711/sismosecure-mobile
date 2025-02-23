@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { IonicModule, ToastController } from '@ionic/angular';
 import { Salones } from 'src/app/models/salones.model';
 import { AsistenciasService } from 'src/app/services/asistencias.service';
@@ -26,7 +27,8 @@ export class HomePage implements OnInit {
     private renderer: Renderer2,
     private salonesServ: SalonesService,
     private asistenciasServ: AsistenciasService,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -80,5 +82,12 @@ export class HomePage implements OnInit {
       color: 'secondary',
     });
     await toast.present();
+  }
+
+  onRefresh(event: any) {
+    setTimeout(() => {
+      event.target.complete();
+      this.router.navigate(['auth/inicio']);
+    }, 2000);
   }
 }
