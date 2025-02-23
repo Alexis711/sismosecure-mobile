@@ -2,15 +2,31 @@
 // http://ionicframework.com/docs/theming/
 
 :root {
-    --background-color: #000000;
+    --background-color: #d4fafb;
     --primary-color: #04767A;
     --secondary-color: #7ecfc9;
-    --tertiary-color: #000000;
-    --success-color: #000000;
-    --warning-color: #000000;
-    --danger-color: #000000;
-    --dark-color: #022840;
-    --medium-color: #000000;
-    --light-color: #d4fafb;
-    --input-color: #dff9f9;
+    --tertiary-color: #3c859f;
+    --success-color: #3c9a6e;
+    --warning-color: #fac83e;
+    --danger-color: #ce2d32;
+    --dark-color: #030606;
+    --medium-color: #3d5463;
+    --light-color: #e8fafa;
+    --input-color: #c5e0e0;
+}
+
+@media(prefers-color-scheme: dark) {
+    :root {
+        --background-color: #030606;
+        --primary-color: #11d4db;
+        --secondary-color: #b7f0ed;
+        --tertiary-color: #61c2e6;
+        --success-color: #79eb73;
+        --warning-color: #f4be66;
+        --danger-color: #ea6565;
+        --dark-color: #eaf1f1;
+        --medium-color: #48728d;
+        --light-color: #020404;
+        --input-color: #101414;
+    }
 }

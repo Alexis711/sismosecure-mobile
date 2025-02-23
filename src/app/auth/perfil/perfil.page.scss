@@ -1,0 +1,51 @@
+ion-content {
+    --background: var(--background-color);
+    overflow-x: auto;
+}
+
+ion-row {
+    padding: 1rem;
+}
+
+ion-col {
+    display: flex;
+    justify-content: center;
+}
+
+ion-avatar {
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+}
+
+ion-label {
+    margin-bottom: 1rem;
+}
+
+ion-input {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    background: var(--input-color);
+    border-radius: 15px;
+}
+
+ion-button {
+    width: 100%;
+    --color: white;
+    --background: var(--success-color);
+    --border-radius: 10px;
+    text-transform: capitalize;
+}
+
+.btn-cancelar {
+    --background: var(--danger-color);
+}
+
+.row-input {
+    margin-top: 1rem;
+}
+
+.row-button {
+    margin-top: 2rem;
+}
