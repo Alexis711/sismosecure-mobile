@@ -22,7 +22,7 @@ export class LoginPage implements OnInit {
   formLogin!: FormGroup;
 
   constructor(
-    private usuariosServe: UsuariosService,
+    private usuariosServ: UsuariosService,
     private formBuilder: FormBuilder,
     private router: Router
   ) { }
@@ -36,12 +36,12 @@ export class LoginPage implements OnInit {
 
   onIniciarSesion() {
     if(this.formLogin.valid){
-      this.usuariosServe.postLogin(this.formLogin.value)
+      this.usuariosServ.postLogin(this.formLogin.value)
         .subscribe((respuesta: any) => {
           if (respuesta.Estatus) {            
             this.router.navigate(['auth']);
             console.log(respuesta.Data)
-            localStorage.setItem('Usuario', respuesta.Data);
+            localStorage.setItem('Usuario', JSON.stringify(respuesta.Data));
           }
         });
     }
